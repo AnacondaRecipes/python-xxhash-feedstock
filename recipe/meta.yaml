@@ -25,6 +25,8 @@ requirements:
     - python
     - msinttypes  # [win and py<35]
     - pip
+    - setuptools
+    - wheel
     - xxhash
   run:
     - python
