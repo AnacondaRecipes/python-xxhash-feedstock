@@ -44,8 +44,12 @@ about:
   home: https://github.com/ifduyue/python-xxhash
   license: BSD-2-Clause
   license_file: LICENSE
+  license_url: https://github.com/ifduyue/python-xxhash/blob/v{{ version }}/LICENSE
   summary: Python binding for xxHash
   license_family: BSD
+  doc_url: https://github.com/ifduyue/python-xxhash/tree/v{{ version }}
+  doc_source_url: https://raw.githubusercontent.com/ifduyue/python-xxhash/v{{ version }}/README.rst
+  dev_url: https://github.com/ifduyue/python-xxhash/tree/v{{ version }}
 
 extra:
   recipe-maintainers:
