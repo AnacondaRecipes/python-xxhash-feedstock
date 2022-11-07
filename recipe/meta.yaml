@@ -46,6 +46,8 @@ about:
   license_file: LICENSE
   license_url: https://github.com/ifduyue/python-xxhash/blob/v{{ version }}/LICENSE
   summary: Python binding for xxHash
+  description: |
+    Python binding for xxHash which is an extremely fast hash algorithm, processing at RAM speed limits. Code is highly portable, and produces hashes identical across all platforms (little / big endian).
   license_family: BSD
   doc_url: https://github.com/ifduyue/python-xxhash/tree/v{{ version }}
   doc_source_url: https://raw.githubusercontent.com/ifduyue/python-xxhash/v{{ version }}/README.rst
