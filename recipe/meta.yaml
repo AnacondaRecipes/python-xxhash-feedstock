@@ -1,5 +1,5 @@
-{% set version = "2.0.2" %}
-{% set sha256 = "b7bead8cf6210eadf9cecf356e17af794f57c0939a3d420a00d87ea652f87b49" %}
+{% set version = "3.5.0" %}
+{% set sha256 = "84f2caddf951c9cbf8dc2e22a89d4ccf5d86391ac6418fe81e3c67d0cf60b45f" %}
 {% set pip_name = "xxhash" %}
 {% set name = "python-xxhash" %}
 
@@ -12,11 +12,11 @@ source:
   url: https://pypi.io/packages/source/{{ pip_name[0] }}/{{ pip_name }}/{{ pip_name }}-{{ version }}.tar.gz
 
 build:
-  number: 1
+  number: 0
   script:
     - export XXHASH_LINK_SO=1  # [unix]
     - SET XXHASH_LINK_SO=1  # [win]
-    - {{ PYTHON }} -m pip install --no-deps --ignore-installed .
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
@@ -44,14 +44,12 @@ about:
   home: https://github.com/ifduyue/python-xxhash
   license: BSD-2-Clause
   license_file: LICENSE
-  license_url: https://github.com/ifduyue/python-xxhash/blob/v{{ version }}/LICENSE
   summary: Python binding for xxHash
   description: |
     Python binding for xxHash which is an extremely fast hash algorithm, processing at RAM speed limits. Code is highly portable, and produces hashes identical across all platforms (little / big endian).
   license_family: BSD
-  doc_url: https://github.com/ifduyue/python-xxhash/tree/v{{ version }}
-  doc_source_url: https://raw.githubusercontent.com/ifduyue/python-xxhash/v{{ version }}/README.rst
-  dev_url: https://github.com/ifduyue/python-xxhash/tree/v{{ version }}
+  doc_url: https://github.com/ifduyue/python-xxhash
+  dev_url: https://github.com/ifduyue/python-xxhash
 
 extra:
   recipe-maintainers:
