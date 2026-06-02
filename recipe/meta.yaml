@@ -25,7 +25,6 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - msinttypes  # [win and py<35]
     - pip
     - setuptools >=45
     - xxhash
