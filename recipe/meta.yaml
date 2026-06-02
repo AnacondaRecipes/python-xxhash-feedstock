@@ -1,5 +1,5 @@
-{% set version = "3.5.0" %}
-{% set sha256 = "84f2caddf951c9cbf8dc2e22a89d4ccf5d86391ac6418fe81e3c67d0cf60b45f" %}
+{% set version = "3.7.0" %}
+{% set sha256 = "6cc4eefbb542a5d6ffd6d70ea9c502957c925e800f998c5630ecc809d6702bae" %}
 {% set pip_name = "xxhash" %}
 {% set name = "python-xxhash" %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   sha256: {{ sha256 }}
-  url: https://pypi.io/packages/source/{{ pip_name[0] }}/{{ pip_name }}/{{ pip_name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ pip_name[0] }}/{{ pip_name }}/{{ pip_name }}-{{ version }}.tar.gz
 
 build:
   number: 0
@@ -17,16 +17,16 @@ build:
     - export XXHASH_LINK_SO=1  # [unix]
     - SET XXHASH_LINK_SO=1  # [win]
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+ skip: true  # [py<38]
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
   host:
     - python
-    - msinttypes  # [win and py<35]
     - pip
-    - setuptools
-    - wheel
+    - setuptools >=45
     - xxhash
   run:
     - python
