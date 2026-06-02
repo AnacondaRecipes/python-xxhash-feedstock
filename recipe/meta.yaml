@@ -17,6 +17,7 @@ build:
     - export XXHASH_LINK_SO=1  # [unix]
     - SET XXHASH_LINK_SO=1  # [win]
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+ skip: true  # [py<38]
 
 requirements:
   build:
