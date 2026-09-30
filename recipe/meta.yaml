@@ -1,15 +1,14 @@
-{% set version = "3.7.0" %}
-{% set sha256 = "6cc4eefbb542a5d6ffd6d70ea9c502957c925e800f998c5630ecc809d6702bae" %}
-{% set pip_name = "xxhash" %}
 {% set name = "python-xxhash" %}
+{% set version = "4.0.1" %}
+{% set pip_name = "xxhash" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  sha256: {{ sha256 }}
   url: https://pypi.org/packages/source/{{ pip_name[0] }}/{{ pip_name }}/{{ pip_name }}-{{ version }}.tar.gz
+  sha256: d55bf4ef10eb09b8b6866790e083d26d087d84caa3cc0946ba87c3ca7ecaf7b7
 
 build:
   number: 0
@@ -17,7 +16,7 @@ build:
     - export XXHASH_LINK_SO=1  # [unix]
     - SET XXHASH_LINK_SO=1  # [win]
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
- skip: true  # [py<38]
+  skip: true  # [py<39]
 
 requirements:
   build:
@@ -27,7 +26,7 @@ requirements:
     - python
     - pip
     - setuptools >=45
-    - xxhash
+    - xxhash {{ xxhash }}
   run:
     - python
     - xxhash
